@@ -40,7 +40,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Label.text = String(global.life_struct)
+	$Label.text = String(global.total)
 	$ProgressBar.value = global.life_struct
 #	pass
 
@@ -101,6 +101,7 @@ func _create_car():
 
 
 func _on_end_body_entered(body):
+	global.add_point()
 	body.free()
 	pass # Replace with function body.
 
