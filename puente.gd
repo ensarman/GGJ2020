@@ -72,31 +72,31 @@ func _create_car():
 	type_car= randi()%6
 	if type_car == 0:
 		speed = 200
-		damage = 100
+		damage = global.damage_start-50 + global.total
 		texture = convertible
 	elif type_car == 1:
 		speed = 180
-		damage = 200
+		damage = global.damage_start + global.total
 		texture=compacto
 	elif type_car == 2:
 		speed = 150
-		damage = 300
+		damage = 50 + global.damage_start+ global.total
 		texture=hatchbag
 	elif type_car == 3:
 		speed = 110
-		damage = 400
+		damage = 100 + global.damage_start  + global.total
 		texture=camioneta
 	elif type_car == 4:
 		speed = 100
-		damage = 500
+		damage = 150 + global.damage_start + global.total
 		texture=combi
 	elif type_car == 5:
 		speed = 100
-		damage = 500
+		damage = 200 + global.damage_start + global.total
 		texture=stationwagon
 	elif type_car == 6:
 		speed = 100
-		damage = 500
+		damage = 250 + global.damage_start + global.total
 		texture=bus
 	else:
 		speed = 90
@@ -136,6 +136,7 @@ func _on_Button3_button_up():
 
 func _create_buff(slime_num: int, heal:int):
 	var death_time
+	#var pu
 	if slime_num==1:
 		texture = slime1
 		requered_energy = 50
@@ -154,6 +155,7 @@ func _create_buff(slime_num: int, heal:int):
 		GrabedInstance = slime.instance()
 		GrabedInstance.heal = heal
 		GrabedInstance.texture = texture
+		
 		GrabedInstance.global_position = $SpawHeal/Position2D1.position
 		GrabedInstance.death_time = death_time
 		global.energy -= requered_energy
