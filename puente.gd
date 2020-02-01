@@ -109,8 +109,23 @@ func _on_end_body_entered(body):
 	body.free()
 	pass # Replace with function body.
 
-
 func _on_Area2D_body_entered(body):
 	global.take_damage(body.damage)
 	body.text = String(body.damage)
 	pass # Replace with function body.
+
+func _on_Button_button_up():
+	_create_buff()
+	pass # Replace with function body.
+
+func _on_Button2_button_up():
+	_create_buff()
+	pass # Replace with function body.
+
+func _on_Button3_button_up():
+	_create_buff()
+	pass # Replace with function body.
+
+func _create_buff():
+	print("crea el slime que cura")
+	pass
