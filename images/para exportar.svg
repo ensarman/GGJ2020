@@ -15,8 +15,8 @@
    viewBox="0 0 210 297"
    version="1.1"
    id="svg8"
-   inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="para exportar.svg">
+   sodipodi:docname="para exportar.svg"
+   inkscape:version="0.92.4 5da689c313, 2019-01-14">
   <defs
      id="defs2">
     <marker
@@ -245,7 +245,7 @@
      inkscape:pageshadow="2"
      inkscape:zoom="0.70710678"
      inkscape:cx="686.98638"
-     inkscape:cy="515.82114"
+     inkscape:cy="572.38968"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -264,7 +264,6 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -308,8 +307,8 @@
        inkscape:export-xdpi="146.49989"
        inkscape:export-ydpi="146.49989" />
     <image
-       y="80.071777"
-       x="75.748825"
+       y="76.704178"
+       x="110.54732"
        id="image9703"
        xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMEAAABGCAYAAAB19/D8AAAABHNCSVQICAgIfAhkiAAADLJJREFU
 eJztnXty4zYSxj/iQVLyJFFukFTlQHOBTaUqmWQmk2QPM/H4VbnZVu3eIFYsPgDwsX8AoCiaki0R
@@ -454,7 +453,10 @@ f5Tldly4roNev49+v4/hcIgnT0b45ptveEpuAZ7vIUniNOfevEG/38dm89B6zslRu9/vYzRKR27P
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="25.929167"
-       width="65.352081" />
+       width="65.352081"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/bus.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="105.57941"
        x="51.902"
@@ -514,7 +516,10 @@ B0GAMLLtknEUYRrH+P777/e6lr4UxbHrjrc3Jwht13zgSvhde7QWSNR2v5U/xRDHkR1LZMezTW1e
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="20.637501"
-       width="36.512501" />
+       width="36.512501"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/smart.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="106.14069"
        x="101.65202"
@@ -571,7 +576,10 @@ sKaxO4UXibLL69r/A8/6AJrcPbMuAAAAAElFTkSuQmCC
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="20.637501"
-       width="54.504166" />
+       width="54.504166"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/stationwagon.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="39.994297"
        x="110.78175"
@@ -609,7 +617,10 @@ YII=
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="26.458334"
-       width="47.095833" />
+       width="47.095833"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/combi.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="13.915372"
        x="112.34816"
@@ -668,7 +679,10 @@ iTiOdwYvjuOjjNT8iDAMEQTuNk5xHCNJkr4P6eyIGWsuugvC7cTapxbaidMl0wBhGIHFMRL2Oi08
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="22.489584"
-       width="55.5625" />
+       width="55.5625"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/camioneta.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="132.64857"
        x="91.557014"
@@ -703,7 +717,10 @@ iaIokeereysGvs5UD6sC5WF6UlZojiddfd972b9r+r6HkvKYeX02b9eYJWFmLoVE27ZYr9d4ttks
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="24.870832"
-       width="45.508335" />
+       width="45.508335"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/furgon.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="137.3806"
        x="18.367067"
@@ -753,7 +770,10 @@ WZCy/RALz0cQBIii84b5mALxf39ng2fpyoZHAAAAAElFTkSuQmCC
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="25.135416"
-       width="64.293747" />
+       width="64.293747"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/micro.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="170.44438"
        x="93.401306"
@@ -822,7 +842,10 @@ f6UvsC+2BbEwug1gs9kMs+kUs+ls633v48f/B78PeDrpST3kAAAAAElFTkSuQmCC
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="20.372917"
-       width="50.799999" />
+       width="50.799999"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/hatchbag.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="167.0408"
        x="28.079157"
@@ -863,7 +886,10 @@ RU5ErkJggg==
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="23.8125"
-       width="45.243752" />
+       width="45.243752"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/compacto.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="199.21063"
        x="19.858269"
@@ -924,7 +950,10 @@ fvhrAAAAAElFTkSuQmCC
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="21.960417"
-       width="57.943748" />
+       width="57.943748"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/sedanantiguo.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
     <image
        y="201.91125"
        x="85.275108"
@@ -986,6 +1015,9 @@ hRDS3cBlN+5+/P6HUVb1+oZMktQ9ySbLMjfGPM8HP28A+vl15iEn9h6iJIld1dJv47HZaQgfOBRM
        style="image-rendering:optimizeSpeed"
        preserveAspectRatio="none"
        height="16.933332"
-       width="55.827084" />
+       width="55.827084"
+       inkscape:export-filename="/mnt/varios/devjuegos/GGJ2020/sprite/convertible.png"
+       inkscape:export-xdpi="146"
+       inkscape:export-ydpi="146" />
   </g>
 </svg>
