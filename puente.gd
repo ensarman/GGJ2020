@@ -8,7 +8,7 @@ var speed :int = 200
 var damage:int = 10
 var texture:Texture 
 
-var bus = preload("res://sprite/bus.png")
+var bus = preload("res://autoA1.png")
 var camioneta = preload("res://sprite/camioneta.png")
 var combi = preload("res://sprite/combi.png")
 var compacto = preload("res://sprite/compacto.png")
@@ -56,7 +56,7 @@ func _on_Area2D_body_exited(body):
 func _on_Timer_timeout():
 	GrabedInstance= MySmokeResource.instance()
 	_create_car()
-	pass # Replace with function body.
+	#pass # Replace with function body.
 
 func _create_car():
 	

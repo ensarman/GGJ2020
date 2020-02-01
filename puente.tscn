@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://sprite/puente.png" type="Texture" id=1]
+[ext_resource path="res://puente.png" type="Texture" id=1]
+[ext_resource path="res://autoA1.tscn" type="PackedScene" id=2]
 [ext_resource path="res://puente.gd" type="Script" id=3]
 [ext_resource path="res://images/layer_1.tex" type="Texture" id=4]
 [ext_resource path="res://CanvasLayer.gd" type="Script" id=5]
@@ -9,6 +10,7 @@
 [ext_resource path="res://sprite/slime1.png" type="Texture" id=8]
 [ext_resource path="res://sprite/slime2.png" type="Texture" id=9]
 [ext_resource path="res://sprite/slime3.png" type="Texture" id=10]
+[ext_resource path="res://game.gd" type="Script" id=11]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 1.00281, 61.8937 )
@@ -17,6 +19,7 @@ b = Vector2( 1.00281, 61.8937 )
 a = Vector2( -1.05408, 87.2054 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 11 )
 
 [node name="Interface" type="Node2D" parent="."]
 
@@ -175,7 +178,7 @@ position = Vector2( 921.534, 69.6507 )
 shape = SubResource( 2 )
 
 [node name="Puente" type="Sprite" parent="puente"]
-position = Vector2( 581.677, 388.391 )
+position = Vector2( 508.677, 250.391 )
 scale = Vector2( 1, 1.30083 )
 texture = ExtResource( 1 )
 
@@ -245,6 +248,9 @@ icon = ExtResource( 10 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="AutoA1" parent="." instance=ExtResource( 2 )]
+position = Vector2( -117.064, 339.793 )
 [connection signal="body_entered" from="puente/end" to="puente" method="_on_end_body_entered"]
 [connection signal="body_entered" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_exited"]
