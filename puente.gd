@@ -19,7 +19,7 @@ var micro = preload("res://sprite/micro.png")
 var sedanantiguo = preload("res://sprite/sedanantiguo.png")
 var smart = preload("res://sprite/smart.png")
 var stationwagon = preload("res://sprite/stationwagon.png")
-
+var vector = Vector2()
 
 # Declare member variables here. Examples:
 # var a = 2

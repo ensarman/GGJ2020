@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://sprite/puente.png" type="Texture" id=1]
+[ext_resource path="res://sprite/MenuCompra.png" type="Texture" id=2]
 [ext_resource path="res://puente.gd" type="Script" id=3]
+[ext_resource path="res://images/fondo.jpg" type="Texture" id=4]
+[ext_resource path="res://CanvasLayer.gd" type="Script" id=5]
 
 [sub_resource type="SegmentShape2D" id=2]
 b = Vector2( 1.00281, 61.8937 )
@@ -117,6 +120,23 @@ __meta__ = {
 [node name="Timer" type="Timer" parent="puente"]
 wait_time = 5.615
 autostart = true
+
+[node name="MenuCompra" type="Sprite" parent="."]
+position = Vector2( 602.354, 506.485 )
+scale = Vector2( 0.668382, 0.662924 )
+texture = ExtResource( 2 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource( 5 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+motion_mirroring = Vector2( 300, 0 )
+
+[node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+position = Vector2( 580.634, 258.397 )
+texture = ExtResource( 4 )
 [connection signal="body_entered" from="puente/end" to="puente" method="_on_end_body_entered"]
 [connection signal="body_entered" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_exited"]
