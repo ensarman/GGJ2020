@@ -9,9 +9,21 @@ extents = Vector2( 27, 27 )
 [node name="Auto" type="KinematicBody2D"]
 position = Vector2( 1.75809, 7.03235 )
 script = ExtResource( 2 )
+speed = 257
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = -17.4893
+margin_top = -55.8345
+margin_right = 22.5107
+margin_bottom = -41.8345
+custom_colors/font_color = Color( 0.964706, 0.0352941, 0.0352941, 1 )
+text = "asdsad"
+__meta__ = {
+"_edit_use_anchors_": false
+}
