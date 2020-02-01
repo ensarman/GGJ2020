@@ -2,8 +2,9 @@ extends Node
 
 
 # Declare member variables here. Examples:
-var life_struct = 10000
+var life_struct : int= 10000
 var total = 0
+var energy = 0
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,6 +22,7 @@ func lose():
 	
 func add_point():
 	total += 1
+	energy += 50
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

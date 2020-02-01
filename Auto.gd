@@ -10,22 +10,6 @@ export (int) var type_car = 0
 export (String) var text = ""
 export (Texture) var texture
 
-#var bus = preload("res://sprite/bus.png")
-#var camioneta = preload("res://sprite/camioneta.png")
-#var combi = preload("res://sprite/combi.png")
-#var compacto = preload("res://sprite/compacto.png")
-#var convertible = preload("res://sprite/convertible.png")
-#var furgon = preload("res://sprite/furgon.png")
-#var hatchbag = preload("res://sprite/hatchbag.png")
-#var micro = preload("res://sprite/micro.png")
-#var sedanantiguo = preload("res://sprite/sedanantiguo.png")
-#var smart = preload("res://sprite/smart.png")
-#var stationwagon = preload("res://sprite/stationwagon.png")
-
-
-#var bus = preload("res://sprite/bus.png")
-#export(Texture) var asset setget my_func
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Sprite.texture = texture

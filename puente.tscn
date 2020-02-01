@@ -1,12 +1,14 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://sprite/puente.png" type="Texture" id=1]
-[ext_resource path="res://sprite/MenuCompra.png" type="Texture" id=2]
 [ext_resource path="res://puente.gd" type="Script" id=3]
 [ext_resource path="res://images/layer_1.tex" type="Texture" id=4]
 [ext_resource path="res://CanvasLayer.gd" type="Script" id=5]
 [ext_resource path="res://images/layer_2.tex" type="Texture" id=6]
 [ext_resource path="res://images/layer_3.tex" type="Texture" id=7]
+[ext_resource path="res://sprite/slime1.png" type="Texture" id=8]
+[ext_resource path="res://sprite/slime2.png" type="Texture" id=9]
+[ext_resource path="res://sprite/slime3.png" type="Texture" id=10]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 1.00281, 61.8937 )
@@ -15,6 +17,85 @@ b = Vector2( 1.00281, 61.8937 )
 a = Vector2( -1.05408, 87.2054 )
 
 [node name="Node2D" type="Node2D"]
+
+[node name="Interface" type="Node2D" parent="."]
+
+[node name="Puntaje" type="Label" parent="Interface"]
+anchor_left = 0.062
+anchor_right = 0.062
+margin_left = 625.878
+margin_top = 11.9846
+margin_right = 665.878
+margin_bottom = 25.9846
+custom_colors/font_color = Color( 0.0227966, 0.260262, 0.972656, 1 )
+text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="life_struct" type="ProgressBar" parent="Interface"]
+margin_left = 16.7811
+margin_top = 26.8181
+margin_right = 494.781
+margin_bottom = 54.8181
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Interface/life_struct"]
+margin_left = 4.11885
+margin_top = -19.2181
+margin_right = 44.1188
+margin_bottom = -5.21813
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "resistencia del puente"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Interface/life_struct"]
+margin_left = 435.099
+margin_top = -15.2
+margin_right = 475.099
+margin_bottom = -1.19997
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enegy" type="ProgressBar" parent="Interface"]
+margin_left = 800.515
+margin_top = 22.7102
+margin_right = 1015.52
+margin_bottom = 36.7102
+size_flags_horizontal = 0
+size_flags_vertical = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Interface/enegy"]
+margin_left = 1.28345
+margin_top = -14.1602
+margin_right = 41.2834
+margin_bottom = -0.160172
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Energia"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="Interface/enegy"]
+margin_left = 173.85
+margin_top = -14.25
+margin_right = 213.85
+margin_bottom = -0.249977
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="puente" type="Node2D" parent="."]
 position = Vector2( -8.66406, 138.623 )
@@ -29,15 +110,6 @@ position = Vector2( 925.507, 108.528 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/end"]
 position = Vector2( 293.931, -3.01468 )
 shape = SubResource( 1 )
-
-[node name="ProgressBar" type="ProgressBar" parent="puente"]
-margin_left = 267.952
-margin_top = -110.23
-margin_right = 745.952
-margin_bottom = -82.23
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="take_damage" type="Node2D" parent="puente"]
 position = Vector2( 10.9744, 60.3586 )
@@ -107,27 +179,9 @@ position = Vector2( 581.677, 388.391 )
 scale = Vector2( 1, 1.30083 )
 texture = ExtResource( 1 )
 
-[node name="Label" type="Label" parent="puente"]
-anchor_left = 0.062
-anchor_right = 0.062
-margin_left = 936.641
-margin_top = -111.438
-margin_right = 976.641
-margin_bottom = -97.4384
-custom_colors/font_color = Color( 0.0227966, 0.260262, 0.972656, 1 )
-text = "100"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Timer" type="Timer" parent="puente"]
 wait_time = 5.615
 autostart = true
-
-[node name="MenuCompra" type="Sprite" parent="."]
-position = Vector2( 602.354, 506.485 )
-scale = Vector2( 0.668382, 0.662924 )
-texture = ExtResource( 2 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
@@ -146,7 +200,7 @@ texture = ExtResource( 4 )
 motion_mirroring = Vector2( 1200, 0 )
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer2"]
-position = Vector2( 580.483, 179.054 )
+position = Vector2( 604.45, 290.9 )
 texture = ExtResource( 6 )
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
@@ -155,6 +209,42 @@ position = Vector2( 23.1038, 46.2075 )
 [node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 574.706, 150.174 )
 texture = ExtResource( 7 )
+
+[node name="Bottons" type="Node2D" parent="."]
+position = Vector2( 282.879, 2.86615 )
+
+[node name="Button" type="Button" parent="Bottons"]
+margin_left = 268.517
+margin_top = 446.281
+margin_right = 747.517
+margin_bottom = 919.281
+rect_scale = Vector2( 0.3, 0.3 )
+icon = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="Bottons"]
+margin_left = 418.739
+margin_top = 440.101
+margin_right = 1044.74
+margin_bottom = 1030.1
+rect_scale = Vector2( 0.25, 0.25 )
+icon = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button3" type="Button" parent="Bottons"]
+margin_left = 580.835
+margin_top = 441.709
+margin_right = 1091.83
+margin_bottom = 925.709
+rect_scale = Vector2( 0.3, 0.3 )
+icon = ExtResource( 10 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="body_entered" from="puente/end" to="puente" method="_on_end_body_entered"]
 [connection signal="body_entered" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_exited"]

@@ -28,7 +28,7 @@ var vector = Vector2()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$ProgressBar.max_value = global.life_struct
+	get_parent().get_node("Interface/life_struct").max_value = global.life_struct
 	GrabedInstance= MySmokeResource.instance()
 	GrabedInstance.global_position = $SpawAutos.position
 	GrabedInstance.speed = 200
@@ -40,8 +40,12 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	$Label.text = String(global.total)
-	$ProgressBar.value = global.life_struct
+	get_parent().get_node("Interface/Puntaje").text = String(global.total)
+	get_parent().get_node("Interface/life_struct").value = global.life_struct
+	get_parent().get_node("Interface/life_struct/Label2").text = String(global.life_struct)
+	get_parent().get_node("Interface/enegy").value = global.energy
+	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy)
+	
 #	pass
 
 func _on_Area2D_body_exited(body):
