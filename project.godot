@@ -19,6 +19,10 @@ config/name="Puente"
 run/main_scene="res://puente.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+global="*res://global.gd"
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
