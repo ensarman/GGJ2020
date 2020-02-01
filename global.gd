@@ -15,6 +15,8 @@ func take_damage(damage):
 	else:
 		life_struct -= damage
 
+func lose():
+	self.free()
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

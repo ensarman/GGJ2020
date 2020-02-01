@@ -28,7 +28,7 @@ var stationwagon = preload("res://sprite/stationwagon.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	$ProgressBar.max_value = global.life_struct
 	GrabedInstance= MySmokeResource.instance()
 	GrabedInstance.global_position = $SpawAutos.position
 	GrabedInstance.speed = 200
@@ -40,7 +40,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_parent().get_node("Label").text = String(global.life_struct)
+	$Label.text = String(global.life_struct)
+	$ProgressBar.value = global.life_struct
 #	pass
 
 func _on_Area2D_body_exited(body):

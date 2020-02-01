@@ -4,10 +4,10 @@
 [ext_resource path="res://puente.gd" type="Script" id=3]
 
 [sub_resource type="SegmentShape2D" id=2]
-a = Vector2( -1.05408, 87.2054 )
-
-[sub_resource type="SegmentShape2D" id=5]
 b = Vector2( 1.00281, 61.8937 )
+
+[sub_resource type="SegmentShape2D" id=1]
+a = Vector2( -1.05408, 87.2054 )
 
 [node name="Node2D" type="Node2D"]
 
@@ -17,75 +17,6 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="StaticBody2D" type="StaticBody2D" parent="puente"]
-position = Vector2( 578.789, 294.532 )
-
-[node name="Sprite" type="Sprite" parent="puente/StaticBody2D"]
-texture = ExtResource( 1 )
-
-[node name="take_damage" type="Node2D" parent="puente/StaticBody2D"]
-position = Vector2( -578.789, -294.532 )
-
-[node name="Area2D" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 84.9606, 84.7241 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D"]
-shape = SubResource( 2 )
-
-[node name="Area2D2" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 185.952, 84.7241 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D2"]
-shape = SubResource( 2 )
-
-[node name="Area2D3" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 288.451, 78.6947 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D3"]
-shape = SubResource( 2 )
-
-[node name="Area2D4" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 392.458, 90.7534 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D4"]
-shape = SubResource( 2 )
-
-[node name="Area2D5" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 470.84, 89.2461 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D5"]
-shape = SubResource( 2 )
-
-[node name="Area2D6" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 586.905, 83.2168 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D6"]
-shape = SubResource( 2 )
-
-[node name="Area2D7" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 687.896, 80.2021 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D7"]
-shape = SubResource( 2 )
-
-[node name="Area2D8" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 770.8, 80.2021 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D8"]
-shape = SubResource( 2 )
-
-[node name="Area2D9" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 847.674, 72.6654 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D9"]
-shape = SubResource( 2 )
-
-[node name="Area2D10" type="Area2D" parent="puente/StaticBody2D/take_damage"]
-position = Vector2( 921.534, 69.6507 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/StaticBody2D/take_damage/Area2D10"]
-shape = SubResource( 2 )
-
 [node name="SpawAutos" type="Position2D" parent="puente"]
 position = Vector2( -112.148, 133.882 )
 
@@ -94,9 +25,84 @@ position = Vector2( 925.507, 108.528 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/end"]
 position = Vector2( 293.931, -3.01468 )
-shape = SubResource( 5 )
+shape = SubResource( 2 )
 
-[node name="Label" type="Label" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="puente"]
+margin_left = 237.772
+margin_top = 5.0
+margin_right = 715.772
+margin_bottom = 33.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="take_damage" type="Node2D" parent="puente"]
+
+[node name="Area2D" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 84.9606, 84.7241 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D"]
+shape = SubResource( 1 )
+
+[node name="Area2D2" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 185.952, 84.7241 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D2"]
+shape = SubResource( 1 )
+
+[node name="Area2D3" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 288.451, 78.6947 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D3"]
+shape = SubResource( 1 )
+
+[node name="Area2D4" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 392.458, 90.7534 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D4"]
+shape = SubResource( 1 )
+
+[node name="Area2D5" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 470.84, 89.2461 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D5"]
+shape = SubResource( 1 )
+
+[node name="Area2D6" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 586.905, 83.2168 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D6"]
+shape = SubResource( 1 )
+
+[node name="Area2D7" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 687.896, 80.2021 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D7"]
+shape = SubResource( 1 )
+
+[node name="Area2D8" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 770.8, 80.2021 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D8"]
+shape = SubResource( 1 )
+
+[node name="Area2D9" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 847.674, 72.6654 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D9"]
+shape = SubResource( 1 )
+
+[node name="Area2D10" type="Area2D" parent="puente/take_damage"]
+position = Vector2( 921.534, 69.6507 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D10"]
+shape = SubResource( 1 )
+
+[node name="Puente" type="Sprite" parent="puente"]
+position = Vector2( 578.789, 294.532 )
+texture = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="puente"]
 anchor_left = 0.062
 anchor_right = 0.062
 margin_left = 747.991
@@ -108,28 +114,28 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="puente"]
 wait_time = 5.615
 autostart = true
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D2" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D2" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D3" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D3" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D4" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D4" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D5" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D5" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D6" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D6" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D7" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D7" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D8" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D8" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D9" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D9" to="puente" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="puente/StaticBody2D/take_damage/Area2D10" to="puente" method="_on_Area2D_body_entered"]
-[connection signal="body_exited" from="puente/StaticBody2D/take_damage/Area2D10" to="puente" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="puente/end" to="puente" method="_on_end_body_entered"]
-[connection signal="timeout" from="Timer" to="puente" method="_on_Timer_timeout"]
+[connection signal="body_entered" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D2" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D2" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D3" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D3" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D4" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D4" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D5" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D5" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D6" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D6" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D7" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D7" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D8" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D8" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D9" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D9" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="body_entered" from="puente/take_damage/Area2D10" to="puente" method="_on_Area2D_body_entered"]
+[connection signal="body_exited" from="puente/take_damage/Area2D10" to="puente" method="_on_Area2D_body_exited"]
+[connection signal="timeout" from="puente/Timer" to="puente" method="_on_Timer_timeout"]
