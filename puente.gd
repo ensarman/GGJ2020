@@ -136,7 +136,7 @@ func _on_Button3_button_up():
 
 func _create_buff(slime_num: int, heal:int):
 	var death_time
-	#var pu
+	var pos = randi()%6+1
 	if slime_num==1:
 		texture = slime1
 		requered_energy = 50
@@ -156,7 +156,7 @@ func _create_buff(slime_num: int, heal:int):
 		GrabedInstance.heal = heal
 		GrabedInstance.texture = texture
 		
-		GrabedInstance.global_position = $SpawHeal/Position2D1.position
+		GrabedInstance.global_position = get_node("SpawHeal/Position2D"+String(pos)).position
 		GrabedInstance.death_time = death_time
 		global.energy -= requered_energy
 		self.add_child(GrabedInstance)

@@ -235,10 +235,10 @@ position = Vector2( 43.556, 392.361 )
 position = Vector2( 215.351, 309.217 )
 
 [node name="Position2D4" type="Position2D" parent="puente/SpawHeal"]
-position = Vector2( 186.2, 452.318 )
+position = Vector2( 173.957, 414.228 )
 
 [node name="Position2D5" type="Position2D" parent="puente/SpawHeal"]
-position = Vector2( 300.152, 401.967 )
+position = Vector2( 354.566, 418.292 )
 
 [node name="Position2D6" type="Position2D" parent="puente/SpawHeal"]
 position = Vector2( 416.753, 298.616 )
