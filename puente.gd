@@ -51,7 +51,6 @@ func _process(delta):
 	get_parent().get_node("Interface/life_struct/Label2").text = String(global.life_struct)
 	get_parent().get_node("Interface/enegy").value = global.energy
 	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy)
-	$SpawAutos.connect("my_signal", self, "_test")
 #	pass
 func _test():
 	print("ingresa a test")

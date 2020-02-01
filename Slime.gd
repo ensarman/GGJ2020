@@ -3,7 +3,6 @@ export (Texture) var texture
 export (int) var heal
 export (int) var death_time
 
-signal my_signal
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
