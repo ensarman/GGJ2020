@@ -2,9 +2,11 @@ extends Node
 
 
 # Declare member variables here. Examples:
+var life_struct_max : int= 10000
 var life_struct : int= 10000
 var total = 0
 var energy = 0
+var energy_total = 500
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,3 +28,8 @@ func add_point():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _heal(heal :int):
+	if life_struct + heal <= life_struct_max:
+		life_struct += heal
+	else:
+		life_struct = life_struct_max

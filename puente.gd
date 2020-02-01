@@ -1,6 +1,8 @@
 extends Node2D
 var time_generate_new_oponent = 100 #esto tendria que se aleatorio dependiendo del nivel
 const MySmokeResource = preload("res://Auto.tscn")
+const slime = preload("res://Slime.tscn")
+#const slime = preload("res://Auto.tscn")
 var damage_temp:int = 10
 var GrabedInstance
 var type_car:int = 0
@@ -21,14 +23,18 @@ var smart = preload("res://sprite/smart.png")
 var stationwagon = preload("res://sprite/stationwagon.png")
 var vector = Vector2()
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var  spri :Texture 
 
+var slime1 = preload("res://sprite/slime1.png")
+var slime2 = preload("res://sprite/slime2.png")
+var slime3 = preload("res://sprite/slime3.png")
+var requered_energy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_parent().get_node("Interface/life_struct").max_value = global.life_struct
+	
+	get_parent().get_node("Interface/life_struct").max_value = global.life_struct_max
+	get_parent().get_node("Interface/enegy").max_value = global.energy_total
 	GrabedInstance= MySmokeResource.instance()
 	GrabedInstance.global_position = $SpawAutos.position
 	GrabedInstance.speed = 200
@@ -45,9 +51,11 @@ func _process(delta):
 	get_parent().get_node("Interface/life_struct/Label2").text = String(global.life_struct)
 	get_parent().get_node("Interface/enegy").value = global.energy
 	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy)
-	
+	$SpawAutos.connect("my_signal", self, "_test")
 #	pass
-
+func _test():
+	print("ingresa a test")
+	pass
 func _on_Area2D_body_exited(body):
 	body.text = ""
 	pass # Replace with function body.
@@ -115,17 +123,39 @@ func _on_Area2D_body_entered(body):
 	pass # Replace with function body.
 
 func _on_Button_button_up():
-	_create_buff()
+	_create_buff(1, 200)
 	pass # Replace with function body.
 
 func _on_Button2_button_up():
-	_create_buff()
+	_create_buff(2, 300)
 	pass # Replace with function body.
 
 func _on_Button3_button_up():
-	_create_buff()
+	_create_buff(3, 500)
 	pass # Replace with function body.
 
-func _create_buff():
-	print("crea el slime que cura")
+func _create_buff(slime_num: int, heal:int):
+	var death_time
+	if slime_num==1:
+		texture = slime1
+		requered_energy = 50
+		death_time = 2
+	elif slime_num==2:
+		texture = slime2
+		requered_energy = 100
+		death_time = 3
+	else:
+		texture = slime3
+		requered_energy = 150
+		death_time = 5
+		
+	if ((global.energy - requered_energy) >= 0):
+		GrabedInstance = slime.instance()
+		GrabedInstance = slime.instance()
+		GrabedInstance.heal = heal
+		GrabedInstance.texture = texture
+		GrabedInstance.global_position = $SpawHeal/Position2D1.position
+		GrabedInstance.death_time = death_time
+		global.energy -= requered_energy
+		self.add_child(GrabedInstance)
 	pass

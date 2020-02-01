@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://sprite/puente.png" type="Texture" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://images/layer_2.tex" type="Texture" id=6]
 [ext_resource path="res://images/layer_3.tex" type="Texture" id=7]
 [ext_resource path="res://sprite/slime1.png" type="Texture" id=8]
+[ext_resource path="res://sprite/slime2.png" type="Texture" id=9]
+[ext_resource path="res://sprite/slime3.png" type="Texture" id=10]
 
 [sub_resource type="SegmentShape2D" id=1]
 b = Vector2( 1.00281, 61.8937 )
@@ -182,19 +184,10 @@ texture = ExtResource( 1 )
 wait_time = 5.615
 autostart = true
 
-[node name="healing" type="Node2D" parent="puente"]
-
-[node name="Position2D" type="Position2D" parent="puente/healing"]
-position = Vector2( 151.75, 351.617 )
-
-[node name="Sprite" type="Sprite" parent="puente/healing/Position2D"]
-
-[node name="Timer" type="Timer" parent="puente/healing"]
-
-[node name="Bottons" type="Node2D" parent="puente/healing"]
+[node name="Buttons" type="Node2D" parent="puente"]
 position = Vector2( 291.543, -135.757 )
 
-[node name="Button" type="Button" parent="puente/healing/Bottons"]
+[node name="Button" type="Button" parent="puente/Buttons"]
 margin_left = 268.517
 margin_top = 446.281
 margin_right = 747.517
@@ -206,29 +199,49 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="puente/healing/Bottons"]
-margin_left = 414.106
-margin_top = 446.281
-margin_right = 893.106
-margin_bottom = 919.281
-rect_scale = Vector2( 0.3, 0.3 )
-icon = ExtResource( 8 )
+[node name="Button2" type="Button" parent="puente/Buttons"]
+margin_left = 414.0
+margin_top = 446.0
+margin_right = 1040.0
+margin_bottom = 1036.0
+rect_scale = Vector2( 0.25, 0.25 )
+icon = ExtResource( 9 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button3" type="Button" parent="puente/healing/Bottons"]
+[node name="Button3" type="Button" parent="puente/Buttons"]
 margin_left = 559.694
 margin_top = 448.332
 margin_right = 1038.69
 margin_bottom = 921.332
 rect_scale = Vector2( 0.3, 0.3 )
-icon = ExtResource( 8 )
+icon = ExtResource( 10 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SpawHeal" type="Node2D" parent="puente"]
+
+[node name="Position2D1" type="Position2D" parent="puente/SpawHeal"]
+position = Vector2( 75.7507, 298.964 )
+
+[node name="Position2D2" type="Position2D" parent="puente/SpawHeal"]
+position = Vector2( 43.556, 392.361 )
+
+[node name="Position2D3" type="Position2D" parent="puente/SpawHeal"]
+position = Vector2( 215.351, 309.217 )
+
+[node name="Position2D4" type="Position2D" parent="puente/SpawHeal"]
+position = Vector2( 186.2, 452.318 )
+
+[node name="Position2D5" type="Position2D" parent="puente/SpawHeal"]
+position = Vector2( 300.152, 401.967 )
+
+[node name="Position2D6" type="Position2D" parent="puente/SpawHeal"]
+position = Vector2( 416.753, 298.616 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
@@ -256,6 +269,8 @@ position = Vector2( 23.1038, 46.2075 )
 [node name="Sprite" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 574.706, 150.174 )
 texture = ExtResource( 7 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 [connection signal="body_entered" from="puente/end" to="puente" method="_on_end_body_entered"]
 [connection signal="body_entered" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_exited"]
@@ -278,6 +293,6 @@ texture = ExtResource( 7 )
 [connection signal="body_entered" from="puente/take_damage/Area2D10" to="puente" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="puente/take_damage/Area2D10" to="puente" method="_on_Area2D_body_exited"]
 [connection signal="timeout" from="puente/Timer" to="puente" method="_on_Timer_timeout"]
-[connection signal="button_up" from="puente/healing/Bottons/Button" to="puente" method="_on_Button_button_up"]
-[connection signal="button_up" from="puente/healing/Bottons/Button2" to="puente" method="_on_Button2_button_up"]
-[connection signal="button_up" from="puente/healing/Bottons/Button3" to="puente" method="_on_Button3_button_up"]
+[connection signal="button_up" from="puente/Buttons/Button" to="puente" method="_on_Button_button_up"]
+[connection signal="button_up" from="puente/Buttons/Button2" to="puente" method="_on_Button2_button_up"]
+[connection signal="button_up" from="puente/Buttons/Button3" to="puente" method="_on_Button3_button_up"]
