@@ -1,6 +1,8 @@
 extends Node2D
 var time_generate_new_oponent = 100 #esto tendria que se aleatorio dependiendo del nivel
 const MySmokeResource = preload("res://Auto.tscn")
+const slime = preload("res://Slime.tscn")
+#const slime = preload("res://Auto.tscn")
 var damage_temp:int = 10
 var GrabedInstance
 var type_car:int = 0
@@ -21,14 +23,18 @@ var smart = preload("res://sprite/smart.png")
 var stationwagon = preload("res://sprite/stationwagon.png")
 var vector = Vector2()
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var  spri :Texture 
 
+var slime1 = preload("res://sprite/slime1.png")
+var slime2 = preload("res://sprite/slime2.png")
+var slime3 = preload("res://sprite/slime3.png")
+var requered_energy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	get_parent().get_node("Interface/life_struct").max_value = global.life_struct
+	
+	get_parent().get_node("Interface/life_struct").max_value = global.life_struct_max
+	get_parent().get_node("Interface/enegy").max_value = global.energy_total
 	GrabedInstance= MySmokeResource.instance()
 	GrabedInstance.global_position = $SpawAutos.position
 	GrabedInstance.speed = 200
@@ -45,9 +51,10 @@ func _process(delta):
 	get_parent().get_node("Interface/life_struct/Label2").text = String(global.life_struct)
 	get_parent().get_node("Interface/enegy").value = global.energy
 	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy)
-	
 #	pass
-
+func _test():
+	print("ingresa a test")
+	pass
 func _on_Area2D_body_exited(body):
 	body.text = ""
 	pass # Replace with function body.
@@ -64,31 +71,31 @@ func _create_car():
 	type_car= randi()%6
 	if type_car == 0:
 		speed = 200
-		damage = 100
+		damage = global.damage_start-50 + global.total
 		texture = convertible
 	elif type_car == 1:
 		speed = 180
-		damage = 200
+		damage = global.damage_start + global.total
 		texture=compacto
 	elif type_car == 2:
 		speed = 150
-		damage = 300
+		damage = 50 + global.damage_start+ global.total
 		texture=hatchbag
 	elif type_car == 3:
 		speed = 110
-		damage = 400
+		damage = 100 + global.damage_start  + global.total
 		texture=camioneta
 	elif type_car == 4:
 		speed = 100
-		damage = 500
+		damage = 150 + global.damage_start + global.total
 		texture=combi
 	elif type_car == 5:
 		speed = 100
-		damage = 500
+		damage = 200 + global.damage_start + global.total
 		texture=stationwagon
 	elif type_car == 6:
 		speed = 100
-		damage = 500
+		damage = 250 + global.damage_start + global.total
 		texture=bus
 	else:
 		speed = 90
@@ -109,8 +116,47 @@ func _on_end_body_entered(body):
 	body.free()
 	pass # Replace with function body.
 
-
 func _on_Area2D_body_entered(body):
 	global.take_damage(body.damage)
 	body.text = String(body.damage)
 	pass # Replace with function body.
+
+func _on_Button_button_up():
+	_create_buff(1, 200)
+	pass # Replace with function body.
+
+func _on_Button2_button_up():
+	_create_buff(2, 300)
+	pass # Replace with function body.
+
+func _on_Button3_button_up():
+	_create_buff(3, 500)
+	pass # Replace with function body.
+
+func _create_buff(slime_num: int, heal:int):
+	var death_time
+	var pos = randi()%6+1
+	if slime_num==1:
+		texture = slime1
+		requered_energy = 50
+		death_time = 2
+	elif slime_num==2:
+		texture = slime2
+		requered_energy = 100
+		death_time = 3
+	else:
+		texture = slime3
+		requered_energy = 150
+		death_time = 5
+		
+	if ((global.energy - requered_energy) >= 0):
+		GrabedInstance = slime.instance()
+		GrabedInstance = slime.instance()
+		GrabedInstance.heal = heal
+		GrabedInstance.texture = texture
+		
+		GrabedInstance.global_position = get_node("SpawHeal/Position2D"+String(pos)).position
+		GrabedInstance.death_time = death_time
+		global.energy -= requered_energy
+		self.add_child(GrabedInstance)
+	pass
