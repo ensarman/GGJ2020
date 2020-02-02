@@ -3,8 +3,8 @@ extends Node
 
 # Declare member variables here. Examples:
 var damage_start = 100
-var life_struct_max : int = 10000
-var life_struct : int = 10000
+var life_struct_max : int = 2500
+var life_struct = life_struct_max
 var total = 0
 var energy = 50
 var energy_total = 500
