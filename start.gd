@@ -26,4 +26,7 @@ func _ready():
 
 func _on_Button_button_down():
 	$Label2.hide()
+	get_tree().change_scene("res://puente.tscn")
+	
+func _on_ButtonExplanation_button_up():
 	get_tree().change_scene("res://explanation.tscn")
