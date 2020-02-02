@@ -19,6 +19,6 @@ func _process(delta):
 	$ParallaxBackground/ParallaxLayer.set_motion_offset(offset1)
 	offset2.x -= 30 * delta
 	$ParallaxBackground/ParallaxLayer2.set_motion_offset(offset2)
-#	offset3.x -= 40 * delta
-#	$ParallaxBackground/ParallaxLayer3.set_motion_offset(offset3)
+	offset3.x -= 5 * delta
+	$ParallaxBackground/ParallaxLayer4.set_motion_offset(offset3)
 	pass

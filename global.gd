@@ -8,9 +8,10 @@ var life_struct = life_struct_max
 var total = 0
 var energy = 50
 var energy_total = 500
+var multiplicador : float= 0.1
 
 var puntos_ganados_por_auto = 1
-var energia_ganados_por_auto = 100
+var energia_ganados_por_auto = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,6 +28,7 @@ func lose():
 	
 func add_point():
 	total += puntos_ganados_por_auto
+	multiplicador += 0.1
 	_add_energy()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

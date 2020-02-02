@@ -19,9 +19,9 @@ var channel5 = preload("res://sprite/2/channel5.png")
 var policia = preload("res://sprite/2/policia.png")
 var ambulancia = preload("res://sprite/2/ambulancia.png")
 
-var puente1 = preload("res://sprite/2/puente.png")
-var puente2 = preload("res://sprite/2/puente2.png")
-var puente3 = preload("res://sprite/2/puente3.png")
+#var puente1 = preload("res://sprite/2/puente.png")
+#var puente2 = preload("res://sprite/2/puente2.png")
+#var puente3 = preload("res://sprite/2/puente3.png")
 
 var vector = Vector2()
 var porc
@@ -35,13 +35,13 @@ var requered_energy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	
+	$Timer.wait_time = 5
 	get_parent().get_node("Interface/life_struct").max_value = global.life_struct_max
 	get_parent().get_node("Interface/enegy").max_value = global.energy_total
 	GrabedInstance= MySmokeResource.instance()
 	GrabedInstance.global_position = $SpawAutos.position
 	GrabedInstance.speed = 200
-	GrabedInstance.damage = 300
+	GrabedInstance.damage = global.damage_start * global.multiplicador
 	GrabedInstance.type_car = type_car
 	GrabedInstance.texture = bus
 	self.add_child(GrabedInstance)
@@ -57,16 +57,17 @@ func _process(delta):
 	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy)
 	porc = (global.life_struct * 100) / global.life_struct_max
 	
-	if 70 < porc && porc <= 100:
-		puente = puente1
-	elif 50 < porc && porc <= 70:
-		puente = puente2
-	elif 30 < porc && porc <= 50:
-		puente = puente3
+	if 80< porc  && porc <= 100 :
+		$Puente.frame = 0
+	elif 60< porc  && porc <= 80 :
+		$Puente.frame = 1
+	elif 40< porc  && porc <= 60 :
+		$Puente.frame = 2
+	elif 1< porc  && porc <= 40 :
+		$Puente.frame = 3
 	else:
-		print("romper puente")
-		puente = puente3
-	$Puente.texture = puente
+		$Puente.frame = 4
+	
 	
 	porc = (global.energy * 100) / global.energy_total
 	if global.energy < 50:
@@ -101,35 +102,35 @@ func _on_Timer_timeout():
 func _create_car():
 	
 	GrabedInstance.global_position = $SpawAutos.position
-	var damage_const = global.damage_start + (global.total)*20
+	var damage_const = global.damage_start * global.multiplicador
 	type_car= randi()%6
 	if type_car == 0:
-		speed = 200
-		damage = damage_const -50 
+		speed = 200 + damage_const
+		damage = 3+ damage_const
 		texture = bus
 	elif type_car == 1:
-		speed = 180
-		damage = damage_const
+		speed = 180+ damage_const
+		damage = 4+ damage_const
 		texture=camioneta
 	elif type_car == 2:
-		speed = 150
-		damage = 50 + damage_const
+		speed = 150+ damage_const
+		damage = 5 + damage_const
 		texture=camioncito
 	elif type_car == 3:
-		speed = 110
-		damage = 100 + damage_const
+		speed = 110+ damage_const
+		damage = 6 + damage_const
 		texture=carrito
 	elif type_car == 4:
-		speed = 100
-		damage = 150 + damage_const
+		speed = 100+ damage_const
+		damage = 7 + damage_const
 		texture=channel5
 	elif type_car == 5:
-		speed = 100
-		damage = 200 + damage_const
+		speed = 100+ damage_const
+		damage = 8 + damage_const
 		texture=policia
 	else:
-		speed = 90
-		damage = 700
+		speed = 90+ damage_const
+		damage = 40 + damage_const
 		texture=ambulancia
 	
 	 
@@ -141,6 +142,7 @@ func _create_car():
 	pass
 
 func _on_end_body_entered(body):
+	$Timer.wait_time -= global.total * 0.001
 	global.add_point()
 	body.free()
 	pass # Replace with function body.
@@ -151,15 +153,15 @@ func _on_Area2D_body_entered(body):
 	pass # Replace with function body.
 
 func _on_Button_button_up():
-	_create_buff(1, 200)
+	_create_buff(1, 1 +global.damage_start* global.multiplicador)
 	pass # Replace with function body.
 
 func _on_Button2_button_up():
-	_create_buff(2, 300)
+	_create_buff(2, 2 + global.damage_start * global.multiplicador)
 	pass # Replace with function body.
 
 func _on_Button3_button_up():
-	_create_buff(3, 500)
+	_create_buff(3, 3 + global.damage_start * global.multiplicador)
 	pass # Replace with function body.
 
 func _create_buff(slime_num: int, heal:int):
