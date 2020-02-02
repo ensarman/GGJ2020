@@ -11,19 +11,13 @@ func _ready():
 	get_tree().paused = true
 	pass # Replace with function body.
 
-func _on_Cura_button_up():
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
+
+func _on_continuar_button_down():
 	get_tree().paused = false
-	global._gana_buff(2)
 	queue_free()
 	pass # Replace with function body.
-
-
-func _on_Energia_button_up():
-	get_tree().paused = false
-	global._gana_buff(3)
-	queue_free()
-
-func _on_Vida_button_down():
-	get_tree().paused = false
-	queue_free()
-	print("despaussa")

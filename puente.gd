@@ -2,6 +2,8 @@ extends Node2D
 var time_generate_new_oponent = 100 #esto tendria que se aleatorio dependiendo del nivel
 const MySmokeResource = preload("res://Auto.tscn")
 const slime = preload("res://Slime.tscn")
+const bonus = preload("res://bonus.tscn")
+const pausa = preload("res://Pausa.tscn")
 #const slime = preload("res://Auto.tscn")
 var damage_temp:int = 10
 var GrabedInstance
@@ -38,13 +40,14 @@ func _ready():
 	$Timer.wait_time = 5
 	get_parent().get_node("Interface/life_struct").max_value = global.life_struct_max
 	get_parent().get_node("Interface/enegy").max_value = global.energy_total
-	GrabedInstance= MySmokeResource.instance()
-	GrabedInstance.global_position = $SpawAutos.position
-	GrabedInstance.speed = 200
-	GrabedInstance.damage = global.damage_start * global.multiplicador
-	GrabedInstance.type_car = type_car
-	GrabedInstance.texture = bus
-	self.add_child(GrabedInstance)
+#	GrabedInstance= MySmokeResource.instance()
+#	GrabedInstance.global_position = $SpawAutos.position
+#	GrabedInstance.speed = 200
+#	GrabedInstance.damage = global.damage_start * global.multiplicador
+#	GrabedInstance.type_car = type_car
+#	GrabedInstance.texture = bus
+#	self.add_child(GrabedInstance)
+	global.crear_auto = true
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -85,9 +88,11 @@ func _process(delta):
 	else:
 		$Buttons/Button3.visible = 1
 	if global.total%5 == 0 && global.total != 0:
-#		global._pausa()
-		get_parent().get_node("Control")._pausar()
-		get_parent().get_node("Control").visible = true
+		GrabedInstance= bonus.instance()
+		GrabedInstance.set_global_position($Center.position)
+		self.add_child(GrabedInstance)
+	if global.crear_auto == true:
+		_create_car()
 
 func _test():
 	print("ingresa a test")
@@ -98,12 +103,12 @@ func _on_Area2D_body_exited(body):
 
 
 func _on_Timer_timeout():
-	GrabedInstance= MySmokeResource.instance()
-	_create_car()
+	
+#	_create_car()
 	pass # Replace with function body.
 
 func _create_car():
-	
+	GrabedInstance= MySmokeResource.instance()
 	GrabedInstance.global_position = $SpawAutos.position
 	var damage_const = global.damage_start * global.multiplicador
 	type_car= randi()%6
@@ -141,6 +146,7 @@ func _create_car():
 	GrabedInstance.damage = damage
 	GrabedInstance.type_car = type_car
 	GrabedInstance.texture = texture
+	global.crear_auto = false
 	self.add_child(GrabedInstance)
 	pass
 
@@ -218,4 +224,11 @@ func _on_Cura_button_up():
 
 func _on_Energia_button_up():
 	global._gana_buff(3)
+	pass # Replace with function body.
+
+
+func _on_Pausa_button_up():
+	GrabedInstance= pausa.instance()
+	GrabedInstance.set_global_position($Center.position)
+	self.add_child(GrabedInstance)
 	pass # Replace with function body.

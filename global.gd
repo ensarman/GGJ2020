@@ -9,6 +9,7 @@ var total
 var energy
 var energy_total
 var multiplicador : float
+var crear_auto : bool
 
 var puntos_ganados_por_auto
 var energia_ganados_por_auto 
@@ -46,6 +47,7 @@ func lose():
 func add_point():
 	total += puntos_ganados_por_auto
 	multiplicador += 0.1
+	crear_auto = true
 	_add_energy()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -69,5 +71,6 @@ func _gana_buff(seleccion):
 func _pausa():
 #	get_tree().paused = true
 	pass
+
 
 

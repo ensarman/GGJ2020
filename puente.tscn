@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://sprite/2/puente.png" type="Texture" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
@@ -9,7 +9,6 @@
 [ext_resource path="res://sprite/2/taladro.png" type="Texture" id=7]
 [ext_resource path="res://sprite/2/puenteall.png" type="Texture" id=8]
 [ext_resource path="res://sound/Wizwars_-_05_-_Right_Back_To_You.ogg" type="AudioStream" id=9]
-[ext_resource path="res://bonus.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Fuente/Love Craft.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="DynamicFont" id=1]
@@ -97,10 +96,10 @@ __meta__ = {
 }
 
 [node name="enegy" type="ProgressBar" parent="Interface"]
-margin_left = 800.515
-margin_top = 22.7102
-margin_right = 1015.52
-margin_bottom = 36.7102
+margin_left = 746.236
+margin_top = 31.7567
+margin_right = 961.241
+margin_bottom = 45.7567
 size_flags_horizontal = 0
 size_flags_vertical = 1
 custom_styles/fg = SubResource( 4 )
@@ -126,6 +125,16 @@ margin_right = 213.85
 margin_bottom = -0.249977
 custom_colors/font_color = Color( 0, 0, 0, 1 )
 align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pausa" type="Button" parent="Interface"]
+margin_left = 967.0
+margin_top = 3.0
+margin_right = 1017.0
+margin_bottom = 48.0
+text = "***"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -219,7 +228,7 @@ scale = Vector2( 1.14852, 1.30083 )
 texture = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="puente"]
-wait_time = 5.615
+wait_time = 6.0
 autostart = true
 
 [node name="Buttons" type="Node2D" parent="puente"]
@@ -293,14 +302,16 @@ position = Vector2( 768.224, 272.749 )
 [node name="Position2D5" type="Position2D" parent="puente/SpawHeal"]
 position = Vector2( 951.736, 267.704 )
 
+[node name="Center" type="Position2D" parent="puente"]
+position = Vector2( 496.696, 56.5898 )
+
 [node name="CanvasLayer" parent="." instance=ExtResource( 4 )]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
-
-[node name="Control" parent="." instance=ExtResource( 10 )]
 [connection signal="value_changed" from="Interface/life_struct" to="puente" method="_on_life_struct_value_changed"]
+[connection signal="button_up" from="Interface/Pausa" to="puente" method="_on_Pausa_button_up"]
 [connection signal="body_entered" from="puente/end" to="puente" method="_on_end_body_entered"]
 [connection signal="body_entered" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_exited"]
