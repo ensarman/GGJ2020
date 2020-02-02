@@ -49,13 +49,13 @@ __meta__ = {
 [node name="Puntaje2" type="Label" parent="Interface"]
 anchor_left = 0.062
 anchor_right = 0.062
-margin_left = 520.919
-margin_top = 11.1467
-margin_right = 757.919
-margin_bottom = 68.1467
+margin_left = 549.0
+margin_top = 13.0
+margin_right = 758.0
+margin_bottom = 52.0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0227966, 0.260262, 0.972656, 1 )
-text = "Puntaje:"
+text = "Nivel:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
