@@ -166,4 +166,6 @@ func _create_buff(slime_num: int, heal:int):
 
 
 func _on_life_struct_value_changed(value):
-	print(value)
+	if value == 0:
+		get_parent().get_node("Interface").hide()
+		print("perdiste")
