@@ -67,6 +67,23 @@ func _process(delta):
 		print("romper puente")
 		puente = puente3
 	$Puente.texture = puente
+	
+	porc = (global.energy * 100) / global.energy_total
+	if global.energy < 50:
+		$Buttons/Button.visible = 0
+	else:
+		$Buttons/Button.visible = 1
+		
+	if global.energy < 100:
+		$Buttons/Button2.visible = 0
+	else:
+		$Buttons/Button2.visible = 1
+		
+	if global.energy < 150:
+		$Buttons/Button3.visible = 0
+	else:
+		$Buttons/Button3.visible = 1
+	
 
 func _test():
 	print("ingresa a test")
@@ -130,7 +147,7 @@ func _on_end_body_entered(body):
 
 func _on_Area2D_body_entered(body):
 	global.take_damage(body.damage)
-	body.text = String(body.damage)
+	body.text = '-'+String(body.damage)
 	pass # Replace with function body.
 
 func _on_Button_button_up():

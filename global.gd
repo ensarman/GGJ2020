@@ -27,7 +27,7 @@ func lose():
 	
 func add_point():
 	total += puntos_ganados_por_auto
-	energy += energia_ganados_por_auto
+	_add_energy()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -37,3 +37,9 @@ func _heal(heal :int):
 		life_struct += heal
 	else:
 		life_struct = life_struct_max
+		
+func _add_energy():
+	if energy + energia_ganados_por_auto <= energy_total:
+		energy += energia_ganados_por_auto
+	else:
+		energy = energy_total
