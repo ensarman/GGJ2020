@@ -161,3 +161,9 @@ func _create_buff(slime_num: int, heal:int):
 		global.energy -= requered_energy
 		self.add_child(GrabedInstance)
 	pass
+
+
+
+
+func _on_life_struct_value_changed(value):
+	print(value)
