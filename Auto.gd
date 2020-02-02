@@ -12,7 +12,7 @@ export (String) var text = ""
 export (Texture) var texture
 
 # Called when the node enters the scene tree for the first time.
-func _ready():
+func _ready():	
 	$Sprite.texture = texture
 	pass
 
@@ -46,15 +46,15 @@ func _on_Button_button_down():
 
 
 func _on_Button_button_up():
-	life -= 1
-	
-	if life >= 0:
-		$ProgressBar.value = life
-		if life == 0:
-			global._add_energy()
-			$Label2.text = '+'+str(global.energia_ganados_por_auto)
-			global.add_point()
-			$Heal_Timer.start()
+	if not get_parent().get_parent().name == "StartNode2D":
+		life -= 1
+		if life >= 0:
+			$ProgressBar.value = life
+			if life == 0:
+				global._add_energy()
+				$Label2.text = '+'+str(global.energia_ganados_por_auto)
+				global.add_point()
+				$Heal_Timer.start()
 		
 		
 		

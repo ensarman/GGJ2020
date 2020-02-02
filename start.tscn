@@ -30,8 +30,22 @@ b = Vector2( 0.524292, 59.8931 )
 size = 40
 font_data = ExtResource( 5 )
 
-[node name="Node2D" type="Node2D"]
+[node name="StartNode2D" type="Node2D"]
 script = ExtResource( 8 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 7.53668
+margin_top = 12.0587
+margin_right = 1022.54
+margin_bottom = 116.059
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+text = "EL PUENTE"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
@@ -63,20 +77,6 @@ texture = ExtResource( 3 )
 [node name="Sprite2" type="Sprite" parent="CanvasLayer/ParallaxBackground/ParallaxLayer3"]
 position = Vector2( 1765.79, 168.449 )
 texture = ExtResource( 3 )
-
-[node name="Label" type="Label" parent="CanvasLayer"]
-margin_left = 7.53668
-margin_top = 12.0587
-margin_right = 1022.54
-margin_bottom = 116.059
-custom_fonts/font = SubResource( 1 )
-custom_colors/font_color = Color( 1, 0, 0, 1 )
-text = "EL PUENTE"
-align = 1
-valign = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="puente" type="Node2D" parent="."]
 position = Vector2( -8.66406, 138.623 )
