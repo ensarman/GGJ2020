@@ -21,6 +21,7 @@ func _process(delta):
 	velocity = velocity.normalized() * speed
 	velocity = move_and_slide(velocity)
 	$Label.text = text
+	
 #	self.connect("area_entered", self, "cuerpo" )
 	pass
 
@@ -29,3 +30,11 @@ func _process(delta):
 #	print("ingreso en el area designada")
 #	global.take_damage(type_car)
 #	pass # Replace with function body.
+
+
+func _on_Timer_timeout():
+	if $Sprite.frame == 1:
+		$Sprite.frame = 0
+	else:
+		$Sprite.frame = 1
+	pass # Replace with function body.

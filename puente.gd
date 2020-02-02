@@ -10,17 +10,17 @@ var speed :int = 200
 var damage:int = 10
 var texture:Texture 
 
-var bus = preload("res://sprite/bus.png")
-var camioneta = preload("res://sprite/camioneta.png")
-var combi = preload("res://sprite/combi.png")
-var compacto = preload("res://sprite/compacto.png")
-var convertible = preload("res://sprite/convertible.png")
-var furgon = preload("res://sprite/furgon.png")
-var hatchbag = preload("res://sprite/hatchbag.png")
-var micro = preload("res://sprite/micro.png")
-var sedanantiguo = preload("res://sprite/sedanantiguo.png")
-var smart = preload("res://sprite/smart.png")
-var stationwagon = preload("res://sprite/stationwagon.png")
+var bus = preload("res://sprite/2/bus22.png")
+var camioneta = preload("res://sprite/2/camioneta.png")
+var camioncito = preload("res://sprite/2/camioncito.png")
+#var compacto = preload("res://sprite/compacto.png")
+var carrito = preload("res://sprite/2/carrito.png")
+var channel5 = preload("res://sprite/2/channel5.png")
+var policia = preload("res://sprite/2/policia.png")
+var ambulancia = preload("res://sprite/2/ambulancia.png")
+#var sedanantiguo = preload("res://sprite/sedanantiguo.png")
+#var smart = preload("res://sprite/smart.png")
+#var stationwagon = preload("res://sprite/stationwagon.png")
 var vector = Vector2()
 
 var  spri :Texture 
@@ -52,6 +52,7 @@ func _process(delta):
 	get_parent().get_node("Interface/life_struct/Label2").text = String(global.life_struct)
 	get_parent().get_node("Interface/enegy").value = global.energy
 	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy)
+#	$Puente.frame =
 #	pass
 func _test():
 	print("ingresa a test")
@@ -69,40 +70,36 @@ func _on_Timer_timeout():
 func _create_car():
 	
 	GrabedInstance.global_position = $SpawAutos.position
-	var damage_const = global.damage_start + (global.total)*10
+	var damage_const = global.damage_start + (global.total)*20
 	type_car= randi()%6
 	if type_car == 0:
 		speed = 200
 		damage = damage_const -50 
-		texture = convertible
+		texture = bus
 	elif type_car == 1:
 		speed = 180
 		damage = damage_const
-		texture=compacto
+		texture=camioneta
 	elif type_car == 2:
 		speed = 150
 		damage = 50 + damage_const
-		texture=hatchbag
+		texture=camioncito
 	elif type_car == 3:
 		speed = 110
 		damage = 100 + damage_const
-		texture=camioneta
+		texture=carrito
 	elif type_car == 4:
 		speed = 100
 		damage = 150 + damage_const
-		texture=combi
+		texture=channel5
 	elif type_car == 5:
 		speed = 100
 		damage = 200 + damage_const
-		texture=stationwagon
-	elif type_car == 6:
-		speed = 100
-		damage = 250 + damage_const
-		texture=bus
+		texture=policia
 	else:
 		speed = 90
 		damage = 700
-		texture=furgon
+		texture=ambulancia
 	
 	 
 	GrabedInstance.speed = speed
