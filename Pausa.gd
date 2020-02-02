@@ -20,4 +20,8 @@ func _ready():
 func _on_continuar_button_down():
 	get_tree().paused = false
 	queue_free()
-	pass # Replace with function body.
+	
+
+
+func _on_Salir_pressed():
+	get_tree().quit()

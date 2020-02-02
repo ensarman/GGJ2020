@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Pausa.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.6, 0.6, 0.6, 0.282353 )
 
 [node name="Control" type="Control"]
 anchor_right = 1.0
@@ -12,9 +15,10 @@ __meta__ = {
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 margin_left = -208.314
-margin_top = -139.241
+margin_top = -140.349
 margin_right = 198.686
-margin_bottom = 161.759
+margin_bottom = 160.651
+custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -32,6 +36,7 @@ __meta__ = {
 
 [node name="reiniciar" type="Button" parent="."]
 pause_mode = 2
+visible = false
 margin_left = -140.65
 margin_top = -24.9243
 margin_right = 134.35
@@ -44,11 +49,12 @@ __meta__ = {
 [node name="Salir" type="Button" parent="."]
 pause_mode = 2
 margin_left = -142.0
-margin_top = 69.0
+margin_top = -24.3081
 margin_right = 135.0
-margin_bottom = 131.0
+margin_bottom = 37.6919
 text = "Salir"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="button_down" from="continuar" to="." method="_on_continuar_button_down"]
+[connection signal="pressed" from="Salir" to="." method="_on_Salir_pressed"]
