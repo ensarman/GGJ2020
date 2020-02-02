@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprite/2/puente.png" type="Texture" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
@@ -10,6 +10,15 @@
 [ext_resource path="res://sprite/slime1.png" type="Texture" id=8]
 [ext_resource path="res://sprite/slime2.png" type="Texture" id=9]
 [ext_resource path="res://sprite/slime3.png" type="Texture" id=10]
+[ext_resource path="res://Fuente/Love Craft.ttf" type="DynamicFontData" id=11]
+
+[sub_resource type="DynamicFont" id=5]
+size = 31
+font_data = ExtResource( 11 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+font_data = ExtResource( 11 )
 
 [sub_resource type="StyleBoxFlat" id=1]
 
@@ -28,12 +37,27 @@ a = Vector2( -1.05408, 87.2054 )
 [node name="Puntaje" type="Label" parent="Interface"]
 anchor_left = 0.062
 anchor_right = 0.062
-margin_left = 625.878
-margin_top = 11.9846
-margin_right = 665.878
-margin_bottom = 25.9846
+margin_left = 638.781
+margin_top = 0.0970268
+margin_right = 739.781
+margin_bottom = 57.097
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.0227966, 0.260262, 0.972656, 1 )
 text = "100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Puntaje2" type="Label" parent="Interface"]
+anchor_left = 0.062
+anchor_right = 0.062
+margin_left = 520.919
+margin_top = 11.1467
+margin_right = 757.919
+margin_bottom = 68.1467
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.0227966, 0.260262, 0.972656, 1 )
+text = "Puntaje:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
