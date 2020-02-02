@@ -43,3 +43,7 @@ func _add_energy():
 		energy += energia_ganados_por_auto
 	else:
 		energy = energy_total
+	
+	
+
+

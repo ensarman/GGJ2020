@@ -7,6 +7,7 @@ var velocity = Vector2()
 export (int) var speed = 200
 export (int) var damage = 10
 export (int) var type_car = 0
+export (int) var life = 5
 export (String) var text = ""
 export (Texture) var texture
 
@@ -38,3 +39,29 @@ func _on_Timer_timeout():
 	else:
 		$Sprite.frame = 1
 	pass # Replace with function body.
+
+
+func _on_Button_button_down():
+	pass
+
+
+func _on_Button_button_up():
+	life -= 1
+	
+	if life >= 0:
+		$ProgressBar.value = life
+		if life == 0:
+			global._add_energy()
+			$Label2.text = '+'+str(global.energia_ganados_por_auto)
+			global.add_point()
+			$Heal_Timer.start()
+		
+		
+		
+
+
+func _on_Heal_Timer_timeout():
+#	get_parent().get_node("Timer").stop()
+#	get_parent().get_node("Timer").start()
+	queue_free()
+	

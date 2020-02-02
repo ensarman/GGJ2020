@@ -12,22 +12,22 @@
 [ext_resource path="res://sprite/slime3.png" type="Texture" id=10]
 [ext_resource path="res://Fuente/Love Craft.ttf" type="DynamicFontData" id=11]
 
-[sub_resource type="DynamicFont" id=5]
+[sub_resource type="DynamicFont" id=1]
 size = 31
 font_data = ExtResource( 11 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=2]
 size = 18
 font_data = ExtResource( 11 )
 
-[sub_resource type="StyleBoxFlat" id=1]
+[sub_resource type="StyleBoxFlat" id=3]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=4]
 
-[sub_resource type="SegmentShape2D" id=3]
+[sub_resource type="SegmentShape2D" id=5]
 b = Vector2( 0.524292, 59.8931 )
 
-[sub_resource type="SegmentShape2D" id=4]
+[sub_resource type="SegmentShape2D" id=6]
 a = Vector2( -1.05408, 87.2054 )
 
 [node name="Node2D" type="Node2D"]
@@ -41,7 +41,7 @@ margin_left = 638.781
 margin_top = 0.0970268
 margin_right = 739.781
 margin_bottom = 57.097
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.0227966, 0.260262, 0.972656, 1 )
 text = "100"
 __meta__ = {
@@ -55,7 +55,7 @@ margin_left = 520.919
 margin_top = 11.1467
 margin_right = 757.919
 margin_bottom = 68.1467
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.0227966, 0.260262, 0.972656, 1 )
 text = "Puntaje:"
 __meta__ = {
@@ -68,7 +68,7 @@ margin_left = 16.7811
 margin_top = 26.8181
 margin_right = 494.781
 margin_bottom = 54.8181
-custom_styles/fg = SubResource( 1 )
+custom_styles/fg = SubResource( 3 )
 custom_colors/font_color_shadow = Color( 0.192157, 0.192157, 0.192157, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -103,7 +103,7 @@ margin_right = 1015.52
 margin_bottom = 36.7102
 size_flags_horizontal = 0
 size_flags_vertical = 1
-custom_styles/fg = SubResource( 2 )
+custom_styles/fg = SubResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -141,7 +141,7 @@ position = Vector2( -102.534, 183 )
 position = Vector2( 1197.63, 170.255 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/end"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="take_damage" type="Node2D" parent="puente"]
 position = Vector2( 10.9744, 60.3586 )
@@ -150,61 +150,61 @@ position = Vector2( 10.9744, 60.3586 )
 position = Vector2( 84.9606, 84.7241 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D2" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 185.952, 84.7241 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D2"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D3" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 288.451, 78.6947 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D3"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D4" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 392.458, 90.7534 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D4"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D5" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 470.84, 89.2461 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D5"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D6" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 586.905, 83.2168 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D6"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D7" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 687.896, 80.2021 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D7"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D8" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 770.8, 80.2021 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D8"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D9" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 847.674, 72.6654 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D9"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Area2D10" type="Area2D" parent="puente/take_damage"]
 position = Vector2( 921.534, 69.6507 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/take_damage/Area2D10"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="Puente" type="Sprite" parent="puente"]
 position = Vector2( 558.282, 247.922 )
