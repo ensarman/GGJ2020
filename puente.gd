@@ -55,9 +55,9 @@ func _ready():
 func _process(delta):
 	get_parent().get_node("Interface/Puntaje").text = String(global.total)
 	get_parent().get_node("Interface/life_struct").value = global.life_struct
-	get_parent().get_node("Interface/life_struct/Label2").text = String(global.life_struct)
+	get_parent().get_node("Interface/life_struct/Label2").text = String(global.life_struct_max)
 	get_parent().get_node("Interface/enegy").value = global.energy
-	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy)
+	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy_total)
 	porc = (global.life_struct * 100) / global.life_struct_max
 	
 	if 80< porc  && porc <= 100 :
@@ -171,7 +171,7 @@ func _on_Button2_button_up():
 	pass # Replace with function body.
 
 func _on_Button3_button_up():
-	_create_buff(3, 3 + global.damage_start * global.multiplicador)
+	_create_buff(3, 3 + global.heal_start * global.multiplicador)
 	pass # Replace with function body.
 
 func _create_buff(slime_num: int, heal:int):

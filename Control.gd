@@ -25,5 +25,6 @@ func _on_Energia_button_up():
 
 func _on_Vida_button_down():
 	get_tree().paused = false
+	global._gana_buff(1)
 	queue_free()
 	print("despaussa")
