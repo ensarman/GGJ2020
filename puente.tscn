@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://sprite/2/puente.png" type="Texture" id=1]
 [ext_resource path="res://Button.gd" type="Script" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://sprite/2/taladro.png" type="Texture" id=7]
 [ext_resource path="res://sprite/2/puenteall.png" type="Texture" id=8]
 [ext_resource path="res://sound/Wizwars_-_05_-_Right_Back_To_You.ogg" type="AudioStream" id=9]
+[ext_resource path="res://bonus.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Fuente/Love Craft.ttf" type="DynamicFontData" id=11]
 
 [sub_resource type="DynamicFont" id=1]
@@ -297,6 +298,8 @@ position = Vector2( 951.736, 267.704 )
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 9 )
 autoplay = true
+
+[node name="Control" parent="." instance=ExtResource( 10 )]
 [connection signal="value_changed" from="Interface/life_struct" to="puente" method="_on_life_struct_value_changed"]
 [connection signal="body_entered" from="puente/end" to="puente" method="_on_end_body_entered"]
 [connection signal="body_entered" from="puente/take_damage/Area2D" to="puente" method="_on_Area2D_body_entered"]

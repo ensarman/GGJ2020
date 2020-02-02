@@ -62,7 +62,12 @@ func _add_energy():
 		energy += energia_ganados_por_auto
 	else:
 		energy = energy_total
-	
-	
+
+func _gana_buff(seleccion):
+	get_tree().paused = false
+
+func _pausa():
+#	get_tree().paused = true
+	pass
 
 

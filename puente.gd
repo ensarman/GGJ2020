@@ -84,7 +84,10 @@ func _process(delta):
 		$Buttons/Button3.visible = 0
 	else:
 		$Buttons/Button3.visible = 1
-	
+	if global.total%5 == 0 && global.total != 0:
+#		global._pausa()
+		get_parent().get_node("Control")._pausar()
+		get_parent().get_node("Control").visible = true
 
 func _test():
 	print("ingresa a test")
@@ -201,3 +204,18 @@ func _on_life_struct_value_changed(value):
 		global.show_game_over = true
 		queue_free()
 		get_tree().change_scene("res://start.tscn")
+
+
+func _on_Vida_button_up():
+	global._gana_buff(1)
+	pass # Replace with function body.
+
+
+func _on_Cura_button_up():
+	global._gana_buff(2)
+	pass # Replace with function body.
+
+
+func _on_Energia_button_up():
+	global._gana_buff(3)
+	pass # Replace with function body.
