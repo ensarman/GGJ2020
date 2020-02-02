@@ -17,16 +17,11 @@ _global_script_class_icons={
 
 config/name="Puente"
 run/main_scene="res://start.tscn"
-boot_splash/fullsize=false
 config/icon="res://icon.png"
 
 [autoload]
 
 global="*res://global.gd"
-
-[display]
-
-window/size/resizable=false
 
 [rendering]
 
