@@ -10,14 +10,14 @@ var energy
 var energy_total
 var multiplicador : float
 
-var puntos_ganados_por_auto = 1
+var puntos_ganados_por_auto
 var energia_ganados_por_auto 
 
 var show_game_over
 
 func init():
 	damage_start = 100
-	life_struct_max = 2500
+	life_struct_max = 1500
 	life_struct = life_struct_max
 	total = 0
 	energy = 50
@@ -32,7 +32,7 @@ func init():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	init()
-	pass # Replace with function body.
+	# pass # Replace with function body.
 
 func take_damage(damage):
 	if (life_struct - damage <= 0):
