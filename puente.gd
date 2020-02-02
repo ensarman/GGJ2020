@@ -45,6 +45,7 @@ func _ready():
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+# warning-ignore:unused_argument
 func _process(delta):
 	get_parent().get_node("Interface/Puntaje").text = String(global.total)
 	get_parent().get_node("Interface/life_struct").value = global.life_struct
@@ -68,34 +69,35 @@ func _on_Timer_timeout():
 func _create_car():
 	
 	GrabedInstance.global_position = $SpawAutos.position
+	var damage_const = global.damage_start + (global.total)*10
 	type_car= randi()%6
 	if type_car == 0:
 		speed = 200
-		damage = global.damage_start-50 + global.total
+		damage = damage_const -50 
 		texture = convertible
 	elif type_car == 1:
 		speed = 180
-		damage = global.damage_start + global.total
+		damage = damage_const
 		texture=compacto
 	elif type_car == 2:
 		speed = 150
-		damage = 50 + global.damage_start+ global.total
+		damage = 50 + damage_const
 		texture=hatchbag
 	elif type_car == 3:
 		speed = 110
-		damage = 100 + global.damage_start  + global.total
+		damage = 100 + damage_const
 		texture=camioneta
 	elif type_car == 4:
 		speed = 100
-		damage = 150 + global.damage_start + global.total
+		damage = 150 + damage_const
 		texture=combi
 	elif type_car == 5:
 		speed = 100
-		damage = 200 + global.damage_start + global.total
+		damage = 200 + damage_const
 		texture=stationwagon
 	elif type_car == 6:
 		speed = 100
-		damage = 250 + global.damage_start + global.total
+		damage = 250 + damage_const
 		texture=bus
 	else:
 		speed = 90
@@ -109,7 +111,6 @@ func _create_car():
 	GrabedInstance.texture = texture
 	self.add_child(GrabedInstance)
 	pass
-
 
 func _on_end_body_entered(body):
 	global.add_point()
