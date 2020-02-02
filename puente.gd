@@ -18,12 +18,15 @@ var carrito = preload("res://sprite/2/carrito.png")
 var channel5 = preload("res://sprite/2/channel5.png")
 var policia = preload("res://sprite/2/policia.png")
 var ambulancia = preload("res://sprite/2/ambulancia.png")
-#var sedanantiguo = preload("res://sprite/sedanantiguo.png")
-#var smart = preload("res://sprite/smart.png")
-#var stationwagon = preload("res://sprite/stationwagon.png")
-var vector = Vector2()
 
+var puente1 = preload("res://sprite/2/puente.png")
+var puente2 = preload("res://sprite/2/puente2.png")
+var puente3 = preload("res://sprite/2/puente3.png")
+
+var vector = Vector2()
+var porc
 var  spri :Texture 
+var  puente :Texture 
 
 var slime1 = preload("res://sprite/slime1.png")
 var slime2 = preload("res://sprite/slime2.png")
@@ -52,8 +55,19 @@ func _process(delta):
 	get_parent().get_node("Interface/life_struct/Label2").text = String(global.life_struct)
 	get_parent().get_node("Interface/enegy").value = global.energy
 	get_parent().get_node("Interface/enegy/Label2").text = String(global.energy)
-#	$Puente.frame =
-#	pass
+	porc = (global.life_struct * 100) / global.life_struct_max
+	
+	if 70 < porc && porc <= 100:
+		puente = puente1
+	elif 50 < porc && porc <= 70:
+		puente = puente2
+	elif 30 < porc && porc <= 50:
+		puente = puente3
+	else:
+		print("romper puente")
+		puente = puente3
+	$Puente.texture = puente
+
 func _test():
 	print("ingresa a test")
 	pass
@@ -164,5 +178,5 @@ func _create_buff(slime_num: int, heal:int):
 
 func _on_life_struct_value_changed(value):
 	if value == 0:
-		get_parent().get_node("Interface").hide()
+#		queue_free()
 		print("perdiste")
