@@ -10,9 +10,11 @@ var energy
 var energy_total
 var multiplicador : float
 var crear_auto : bool
+var pausable : bool
 
 var puntos_ganados_por_auto
 var energia_ganados_por_auto 
+
 
 var show_game_over
 
@@ -48,6 +50,7 @@ func add_point():
 	total += puntos_ganados_por_auto
 	multiplicador += 0.1
 	crear_auto = true
+	pausable = true
 	_add_energy()
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

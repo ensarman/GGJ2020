@@ -87,7 +87,8 @@ func _process(delta):
 		$Buttons/Button3.visible = 0
 	else:
 		$Buttons/Button3.visible = 1
-	if global.total%5 == 0 && global.total != 0:
+	if global.total%5 == 0 && global.total != 0 && global.pausable == true:
+		global.pausable = false
 		GrabedInstance= bonus.instance()
 		GrabedInstance.set_global_position($Center.position)
 		self.add_child(GrabedInstance)

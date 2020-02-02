@@ -11,34 +11,38 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -150.0
-margin_top = -99.0
-margin_right = 150.0
-margin_bottom = 99.0
+margin_left = -510.316
+margin_top = -300.579
+margin_right = -501.316
+margin_bottom = -291.579
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -220.0
-margin_top = -154.0
-margin_right = 221.0
-margin_bottom = 74.0
+anchor_left = 0.502
+anchor_top = 0.422
+anchor_right = 0.502
+anchor_bottom = 0.422
+margin_left = -220.518
+margin_top = -101.798
+margin_right = 220.482
+margin_bottom = 89.202
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Vida" type="Button" parent="."]
 pause_mode = 2
-margin_left = -35.0
-margin_top = 44.0
-margin_right = 60.0
-margin_bottom = 121.0
+anchor_left = 0.5
+anchor_top = 0.417
+anchor_right = 0.5
+anchor_bottom = 0.417
+margin_left = -185.0
+margin_top = -38.566
+margin_right = -90.0
+margin_bottom = 38.434
 text = "+ vida"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -46,10 +50,14 @@ __meta__ = {
 
 [node name="Cura" type="Button" parent="."]
 pause_mode = 2
-margin_left = 90.6248
-margin_top = 44.0
-margin_right = 205.625
-margin_bottom = 124.0
+anchor_left = 0.5
+anchor_top = 0.424
+anchor_right = 0.5
+anchor_bottom = 0.424
+margin_left = -59.3752
+margin_top = -39.952
+margin_right = 55.625
+margin_bottom = 40.048
 text = "+ Cura"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -57,20 +65,28 @@ __meta__ = {
 
 [node name="Energia" type="Button" parent="."]
 pause_mode = 2
-margin_left = 222.0
-margin_top = 43.0
-margin_right = 334.0
-margin_bottom = 127.0
+anchor_left = 0.5
+anchor_top = 0.429
+anchor_right = 0.5
+anchor_bottom = 0.429
+margin_left = 72.0
+margin_top = -40.3553
+margin_right = 184.0
+margin_bottom = 43.6447
 text = "+ Energia"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label" type="Label" parent="."]
-margin_left = -1.46115
-margin_top = -23.7473
-margin_right = 145.539
-margin_bottom = -3.74731
+anchor_left = 0.5
+anchor_top = 0.401
+anchor_right = 0.5
+anchor_bottom = 0.401
+margin_left = -171.461
+margin_top = -85.2506
+margin_right = -24.461
+margin_bottom = -65.2506
 custom_fonts/font = SubResource( 1 )
 text = "Escoje un bonus"
 __meta__ = {
