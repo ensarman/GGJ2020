@@ -1,8 +1,26 @@
 extends Node2D
 
+
 func _ready():
-	pass # Replace with function body.
+	$Label2.hide()
+	
+	if global.show_game_over:
+		$Label2.text = "NIVEL ALCANZADO: " + str(global.total) 
+		$Label2.show()
+		$Button.text = "Volver a Jugar"
+		for i in range(10):
+			$Label.text = "GAME OVER"
+			yield(get_tree().create_timer(0.4), "timeout")
+			$Label.text = ""
+			yield(get_tree().create_timer(0.4), "timeout")
+			
+		#yield(get_tree().create_timer(5.0), "timeout")
+		global.init()
+		$Label.text = "EL PUENTE"
+	
+	#pass # Replace with function body.
 
 func _on_Button_button_down():
+	$Label2.hide()
 	get_tree().change_scene("res://puente.tscn")
 	

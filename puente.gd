@@ -197,5 +197,7 @@ func _create_buff(slime_num: int, heal:int):
 
 func _on_life_struct_value_changed(value):
 	if value == 0:
-#		queue_free()
 		print("perdiste")
+		global.show_game_over = true
+		queue_free()
+		get_tree().change_scene("res://start.tscn")
