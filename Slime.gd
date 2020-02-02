@@ -24,13 +24,17 @@ func _ready():
 
 func _on_Timer_timeout():
 	global._heal(heal)
-	$Label.text = '+' + String(heal)
+#	$Label.text = '+' + String(heal)
+	if $Sprite.frame == 1:
+		$Sprite.frame = 0
+		$Label.text =  ""
+	else:
+		
+		$Label.text = '+' + String(heal)
+		$Sprite.frame = 1
+		
 	pass # Replace with function body.
 
 func _on_end_timeout():
 	queue_free()
-	pass # Replace with function body.
-
-func _on_Timer2_timeout():
-	$Label.text =  ""
 	pass # Replace with function body.

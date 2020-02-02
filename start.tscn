@@ -55,7 +55,7 @@ position = Vector2( 1197.63, 170.255 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="puente/end"]
 shape = SubResource( 2 )
 
-[node name="Puente" type="Sprite" parent="puente"]
+[node name="PuenteA" type="Sprite" parent="puente"]
 position = Vector2( 558.282, 247.922 )
 scale = Vector2( 1.14852, 1.30083 )
 texture = ExtResource( 7 )

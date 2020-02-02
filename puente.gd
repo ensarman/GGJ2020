@@ -28,9 +28,9 @@ var porc
 var  spri :Texture 
 var  puente :Texture 
 
-var slime1 = preload("res://sprite/slime1.png")
-var slime2 = preload("res://sprite/slime2.png")
-var slime3 = preload("res://sprite/slime3.png")
+var slime1 = preload("res://sprite/2/taladro.png")
+var slime2 = preload("res://sprite/2/ladri.png")
+var slime3 = preload("res://sprite/2/truck2.png")
 var requered_energy
 
 # Called when the node enters the scene tree for the first time.
