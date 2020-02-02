@@ -164,7 +164,7 @@ func _on_Button3_button_up():
 
 func _create_buff(slime_num: int, heal:int):
 	var death_time
-	var pos = randi()%6+1
+	var pos = randi()%5+1
 	if slime_num==1:
 		texture = slime1
 		requered_energy = 50

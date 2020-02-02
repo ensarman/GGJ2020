@@ -274,10 +274,7 @@ position = Vector2( 557.454, 279.289 )
 position = Vector2( 768.224, 272.749 )
 
 [node name="Position2D5" type="Position2D" parent="puente/SpawHeal"]
-position = Vector2( 1053.03, 279.392 )
-
-[node name="Position2D6" type="Position2D" parent="puente/SpawHeal"]
-position = Vector2( 1181.52, 267.72 )
+position = Vector2( 951.736, 267.704 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource( 5 )
