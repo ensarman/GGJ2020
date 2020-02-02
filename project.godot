@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Puente"
-run/main_scene="res://puente.tscn"
+run/main_scene="res://start.tscn"
 boot_splash/fullsize=false
 config/icon="res://icon.png"
 
